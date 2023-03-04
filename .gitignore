@@ -1,0 +1,3 @@
+.vscode/
+stm/.env
+*__pycache__*
