@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>Старт</title>
+    {% endif %}
+    {% endblock %}
+</head>
+
+<body>
+    <ul>
+        <li><a href="{{ url_for('get_table') }}">Таблица данных</a></li>
+        <li><a href="{{ url_for('index') }}">График</a></li>
+    </ul>
+    {% block content %}
+    {% if title %}
+    <h1>{{ title }}</h1>
+    {% else %}
+    <h1>Старт</h1>
+    {% endif %}
+    {% endblock %}
+</body>
+
+</html>

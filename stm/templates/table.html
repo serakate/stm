@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+<table>
+    <thead>
+        <tr>
+            {% for col in table[0] %}
+            <th>{{ col }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    {% for row in table[1:] %}
+    <tr>
+        {% for col in row %}
+        <td>{{ col }}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
