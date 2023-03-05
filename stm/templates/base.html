@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,10 +16,12 @@
 </head>
 
 <body>
-    <ul>
-        <li><a href="{{ url_for('get_table') }}">Таблица данных</a></li>
-        <li><a href="{{ url_for('index') }}">График</a></li>
-    </ul>
+    <nav>
+        <ul class="menu">
+            <li class="menu-item"><a href="{{ url_for('get_table') }}">Таблица данных</a></li>
+            <li class="menu-item"><a href="{{ url_for('index') }}">График</a></li>
+        </ul>
+    </nav>
     {% block content %}
     {% if title %}
     <h1>{{ title }}</h1>
